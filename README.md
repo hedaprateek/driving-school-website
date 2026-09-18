@@ -59,6 +59,13 @@ These parts hold **example content**. Replace them with your real details before
 
 Document lists in `config.js` follow the common national requirements; check them against your state's RTO once.
 
+## Colour themes
+
+Visitors can switch the site's colour with the palette button in the header. The choice is remembered on their device. There are four themes, all taken from road and RTO signage: **Highway yellow** (the default), **Signboard green**, **RTO blue** and **Signal red**. The animated car in the hero changes colour too.
+
+- **To change a theme's colours,** edit its `:root[data-theme="…"]` block at the top of `css/styles.css`.
+- **To add or rename a theme,** edit the `THEMES` list in `js/layout.js`.
+
 ## Header, tabs and footer
 
 The header tabs and the footer are defined once, in `js/layout.js`:

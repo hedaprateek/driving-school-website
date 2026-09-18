@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
-  <script>document.documentElement.className += ' js';</script>
+  <script>document.documentElement.className += ' js';try{var t=localStorage.getItem('theme');if(t&&t!=='yellow')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
   <script src="js/config.js"></script>
   <script src="js/main.js" defer></script>
 </head>
@@ -27,7 +27,7 @@
   <section class="hero">
     <div class="container hero-grid">
       <div class="hero-copy">
-        <p class="eyebrow on-dark"><span class="dot"></span>Ichalkaranji · Driving school &amp; RTO services</p>
+        <p class="eyebrow on-dark"><span class="dot"></span>Ichalkaranji<span class="hide-sm"> · Driving school &amp; RTO services</span></p>
         <h1>Drive with confidence. <span class="hl">Skip the RTO queue.</span></h1>
         <p class="mr-line" lang="mr">इचलकरंजीतील विश्वासार्ह ड्रायव्हिंग स्कूल व आरटीओ सेवा</p>
         <p class="lead">Patient, certified instructors in dual-control cars — and every licence and vehicle job at the RTO done for you, at a fixed price you know before you pay.</p>
@@ -46,8 +46,8 @@
         <svg class="scene" viewBox="0 0 560 460" role="img" aria-labelledby="scene-title">
           <title id="scene-title">A learner car with an L plate stopping at a traffic signal outside the RTO office</title>
           <defs>
-            <radialGradient id="g-glow"><stop offset="0" stop-color="#F2B705" stop-opacity=".32"/><stop offset="1" stop-color="#F2B705" stop-opacity="0"/></radialGradient>
-            <linearGradient id="g-car" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFD54A"/><stop offset="1" stop-color="#E9A200"/></linearGradient>
+            <radialGradient id="g-glow"><stop offset="0" style="stop-color:var(--amber)" stop-opacity=".32"/><stop offset="1" style="stop-color:var(--amber)" stop-opacity="0"/></radialGradient>
+            <linearGradient id="g-car" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--car-1)"/><stop offset="1" style="stop-color:var(--car-2)"/></linearGradient>
             <linearGradient id="g-beam" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FFE9A6" stop-opacity=".55"/><stop offset="1" stop-color="#FFE9A6" stop-opacity="0"/></linearGradient>
             <radialGradient id="g-red"><stop offset="0" stop-color="#FF4D3D" stop-opacity=".7"/><stop offset="1" stop-color="#FF4D3D" stop-opacity="0"/></radialGradient>
             <g id="wheel">
@@ -79,8 +79,8 @@
             <rect x="382" y="151" width="20" height="4.5" fill="#FF9933"/><rect x="382" y="155.5" width="20" height="4.5" fill="#FFFFFF"/><rect x="382" y="160" width="20" height="4.5" fill="#138808"/>
             <polygon points="292,226 381,186 470,226" fill="#2C323B"/>
             <rect x="300" y="224" width="162" height="108" fill="#252A32"/>
-            <rect x="338" y="232" width="86" height="21" rx="4" fill="#F2B705"/>
-            <text x="381" y="247.5" text-anchor="middle" font-family="Outfit, system-ui, sans-serif" font-weight="800" font-size="13" letter-spacing="2" fill="#16181D">RTO</text>
+            <rect class="rto-sign" x="338" y="232" width="86" height="21" rx="4" fill="#F2B705"/>
+            <text x="381" y="247.5" text-anchor="middle" font-family="Outfit, system-ui, sans-serif" font-weight="800" font-size="13" letter-spacing="2" fill="#16181D" class="rto-text">RTO</text>
             <g fill="#363C47"><rect x="312" y="262" width="10" height="66"/><rect x="336" y="262" width="10" height="66"/><rect x="416" y="262" width="10" height="66"/><rect x="440" y="262" width="10" height="66"/></g>
             <rect x="366" y="286" width="30" height="46" rx="2" fill="#FFD86B" fill-opacity=".38"/>
             <rect x="352" y="328" width="58" height="5" fill="#363C47"/>

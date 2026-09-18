@@ -172,6 +172,46 @@
     document.addEventListener("keydown", function (e) { if (e.key === "Escape") setMenu(false); });
   }
 
+  /* ---------- Colour theme picker ---------- */
+  var themeBtn = $(".theme-btn");
+  var themePop = $("#theme-pop");
+  if (themeBtn && themePop) {
+    var markTheme = function () {
+      var cur = document.documentElement.getAttribute("data-theme") || "yellow";
+      $$("[data-theme-set]", themePop).forEach(function (b) { b.setAttribute("aria-pressed", String(b.getAttribute("data-theme-set") === cur)); });
+    };
+    var setPop = function (open) {
+      themePop.hidden = !open;
+      themeBtn.setAttribute("aria-expanded", String(open));
+    };
+    themeBtn.addEventListener("click", function (e) { e.stopPropagation(); setPop(themePop.hidden); });
+    themePop.addEventListener("click", function (e) {
+      var b = e.target.closest("[data-theme-set]");
+      if (!b) return;
+      var t = b.getAttribute("data-theme-set");
+      if (t === "yellow") document.documentElement.removeAttribute("data-theme");
+      else document.documentElement.setAttribute("data-theme", t);
+      try { localStorage.setItem("theme", t); } catch (err) { /* private mode */ }
+      markTheme();
+      setPop(false);
+      themeBtn.focus();
+    });
+    document.addEventListener("click", function (e) { if (!themePop.hidden && !e.target.closest(".theme-pick")) setPop(false); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !themePop.hidden) { setPop(false); themeBtn.focus(); } });
+    markTheme();
+  }
+
+  /* ---------- Comparison table: labels for the stacked phone layout ---------- */
+  $$(".compare table").forEach(function (table) {
+    var heads = $$("thead th", table).map(function (th) { return th.textContent.trim(); });
+    $$("tbody tr", table).forEach(function (tr) {
+      $$("td", tr).forEach(function (td) {
+        td.setAttribute("data-label", heads[td.cellIndex] || "");
+        td.innerHTML = '<span class="cv">' + td.innerHTML + "</span>";
+      });
+    });
+  });
+
   /* ---------- Scroll reveal + count-up ---------- */
   function countUp(el) {
     var target = Number(el.getAttribute("data-count"));
@@ -316,6 +356,10 @@
       var params = "course=" + p.course.id + "&car=" + (p.auto ? "automatic" : "manual") +
         (p.bundle ? "&bundle=1" : "") + (p.addons.length ? "&addons=" + p.addons.map(function (a) { return a.id; }).join(",") : "");
       $("#sum-book").href = "book.html?" + params;
+      if ($("#plan-bar")) {
+        $("#plan-bar-total").textContent = inr(p.total);
+        $("#plan-bar-book").href = "book.html?" + params;
+      }
       var wa = $("#sum-wa");
       if (waNumber) {
         wa.href = waLink("Hi! I'd like to join this plan at " + (C.businessName || "your school") + ":\n" + planText(p));
@@ -349,6 +393,48 @@
     });
 
     setMode(false);
+
+    // Phone: the price cards become a swipeable row, opening on the popular card.
+    var dots = $("#course-dots");
+    var phone = window.matchMedia("(max-width: 720px)");
+    if (dots) {
+      var cards = $$(".course", courseGrid);
+      dots.innerHTML = cards.map(function (c, i) {
+        return '<button type="button" aria-label="Show ' + esc(courses[i].name) + '"></button>';
+      }).join("");
+      var dotBtns = $$("button", dots);
+      var activeDot = function () {
+        var mid = courseGrid.scrollLeft + courseGrid.clientWidth / 2;
+        var centre = function (c) { return c.offsetLeft - courseGrid.offsetLeft + c.offsetWidth / 2; };
+        var best = 0;
+        cards.forEach(function (c, i) { if (Math.abs(centre(c) - mid) < Math.abs(centre(cards[best]) - mid)) best = i; });
+        dotBtns.forEach(function (d, i) { d.setAttribute("aria-current", String(i === best)); });
+      };
+      var goTo = function (i, smooth) {
+        courseGrid.scrollTo({ left: cards[i].offsetLeft - courseGrid.offsetLeft - 20, behavior: smooth && !reduceMotion ? "smooth" : "auto" });
+      };
+      dotBtns.forEach(function (d, i) { d.addEventListener("click", function () { goTo(i, true); }); });
+      courseGrid.addEventListener("scroll", activeDot, { passive: true });
+      var popularIndex = Math.max(0, courses.findIndex ? courses.findIndex(function (c) { return c.popular; }) : 0);
+      if (phone.matches) goTo(popularIndex, false);
+      activeDot();
+    }
+
+    // Phone: a sticky total bar while you build the plan, until the full summary is on screen.
+    var planBar = $("#plan-bar");
+    var summaryEl = $(".summary");
+    if (planBar && "IntersectionObserver" in window) {
+      var inBuilder = false, summaryVisible = false;
+      var syncBar = function () {
+        var show = phone.matches && inBuilder && !summaryVisible;
+        planBar.classList.toggle("show", show);
+        planBar.setAttribute("aria-hidden", String(!show));
+        $("#plan-bar-book").tabIndex = show ? 0 : -1;
+        document.body.classList.toggle("plan-bar-on", show);
+      };
+      new IntersectionObserver(function (e) { inBuilder = e[0].isIntersecting; syncBar(); }, { rootMargin: "-30% 0px -30% 0px" }).observe($("#builder"));
+      new IntersectionObserver(function (e) { summaryVisible = e[0].isIntersecting; syncBar(); }, { threshold: 0.3 }).observe(summaryEl);
+    }
   }
 
   /* =====================================================================

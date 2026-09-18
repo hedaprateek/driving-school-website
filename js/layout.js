@@ -25,6 +25,15 @@
     { id: "contact", href: "contact.html", label: "Contact" },
   ];
 
+  // Colour themes, taken from road and RTO signage: [id, name, where it comes from, swatch].
+  // The palettes themselves live in css/styles.css under :root[data-theme="…"].
+  var THEMES = [
+    ["yellow", "Highway yellow", "Road markings", "#F2B705"],
+    ["green", "Signboard green", "Highway direction boards", "#22B864"],
+    ["blue", "RTO blue", "Official information signs", "#2F74E8"],
+    ["red", "Signal red", "Stop signs &amp; signals", "#E5483A"],
+  ];
+
   // Credit shown at the foot of every page.
   var CREDIT_COMPANY = "Stunity Tech";
   var CREDIT_AUTHOR = "Prateek";
@@ -49,6 +58,7 @@
     '<symbol id="i-rupee" viewBox="0 0 24 24"><path d="M6 4h12M6 9h12M13.5 20 7 13h2.5a4.5 4.5 0 0 0 0-9"/></symbol>',
     '<symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="5" r="2.5"/><path d="M8.5 19H17a3.5 3.5 0 0 0 0-7H7a3.5 3.5 0 0 1 0-7h8.5"/></symbol>',
     '<symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="17" rx="2.5"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4M8 14h.01M12 14h.01M16 14h.01M8 17.5h.01M12 17.5h.01"/></symbol>',
+    '<symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 2.5a9.5 9.5 0 0 0 0 19c1.3 0 2-.8 2-1.8 0-.5-.2-.9-.5-1.3-.3-.3-.5-.8-.5-1.3 0-1 .8-1.8 1.8-1.8H17a4.5 4.5 0 0 0 4.5-4.5c0-4.6-4.3-8.3-9.5-8.3z"/><circle cx="7.5" cy="11.5" r="1.3" fill="currentColor"/><circle cx="10.5" cy="7.5" r="1.3" fill="currentColor"/><circle cx="15.5" cy="8" r="1.3" fill="currentColor"/></symbol>',
     '<symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.9-3.9"/></symbol>',
     '<symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>',
     '<symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>',
@@ -85,6 +95,15 @@
         TABS.map(function (t) { return '<a href="' + t.href + '"' + current(t.id) + '>' + t.label + '</a>'; }).join("") +
         '<a href="book.html" class="btn btn-amber nav-cta"' + current("book") + '>Book now</a>' +
       '</nav>' +
+      '<div class="theme-pick">' +
+        '<button class="theme-btn" type="button" aria-expanded="false" aria-controls="theme-pop" aria-label="Change colour theme" title="Colour theme">' + icon("palette") + '</button>' +
+        '<div class="theme-pop" id="theme-pop" hidden><p>Colour theme</p>' +
+          THEMES.map(function (t) {
+            return '<button type="button" data-theme-set="' + t[0] + '" aria-pressed="false">' +
+              '<span class="swatch" style="--sw:' + t[3] + '"></span><span><strong>' + t[1] + '</strong><small>' + t[2] + '</small></span></button>';
+          }).join("") +
+        '</div>' +
+      '</div>' +
       '<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Open menu"><span></span><span></span><span></span></button>' +
     '</div></header>';
 

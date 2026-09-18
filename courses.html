@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
-  <script>document.documentElement.className += ' js';</script>
+  <script>document.documentElement.className += ' js';try{var t=localStorage.getItem('theme');if(t&&t!=='yellow')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
   <script src="js/config.js"></script>
   <script src="js/main.js" defer></script>
 </head>
@@ -39,6 +39,7 @@
         </div>
       </div>
       <div class="course-grid" id="course-grid"></div>
+      <div class="course-dots" id="course-dots" aria-label="Choose a course card"></div>
       <noscript><p>Please turn on JavaScript to see our prices, or call us — we're happy to talk you through them.</p></noscript>
     </div>
   </section>
@@ -126,6 +127,11 @@
   </section>
 
 </main>
+
+<div class="plan-bar" id="plan-bar" aria-hidden="true">
+  <div><small>Your plan</small><strong id="plan-bar-total">₹0</strong></div>
+  <a href="book.html" class="btn btn-amber" id="plan-bar-book" tabindex="-1">Book this plan <svg class="icon"><use href="#i-arrow"/></svg></a>
+</div>
 
 <script>SiteLayout.renderFooter();</script>
 </body>
