@@ -951,7 +951,7 @@ a.contact-card:hover { border-color: var(--amber); transform: translateY(-2px); 
 }
 
 @media (max-width: 480px) {
-  .brand-name { font-size: 1.02rem; }
+  .brand-name { font-size: 1rem; white-space: normal; line-height: 1.15; }
   .brand-sub { display: none; }
   .brand-mark { width: 40px; height: 40px; }
   .contact-cards { grid-template-columns: 1fr; }

@@ -8,7 +8,7 @@
  * (3500, not "₹3,500"). Government fees are shown as "extra, at actuals".
  */
 window.SITE_CONFIG = {
-  businessName: "Raftaar Driving School",
+  businessName: "Rushikesh Motor Driving School",
   tagline: "Driving School & RTO Services",
 
   // Shown on the site and used for "tap to call".

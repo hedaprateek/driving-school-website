@@ -68,7 +68,7 @@
 
   var BRAND =
     '<span class="brand-mark"><svg><use href="#i-logo"/></svg></span>' +
-    '<span class="brand-text"><span class="brand-name" data-text="businessName">Raftaar Driving School</span>' +
+    '<span class="brand-text"><span class="brand-name" data-text="businessName">Rushikesh Motor Driving School</span>' +
     '<span class="brand-sub" data-text="tagline">Driving School &amp; RTO Services</span></span>';
 
   var HEADER =
@@ -118,7 +118,7 @@
         '</ul></div>' +
       '</div>' +
       '<div class="footer-bottom">' +
-        '<span>© <span data-year>2026</span> <span data-text="businessName">Raftaar Driving School</span>. All rights reserved.</span>' +
+        '<span>© <span data-year>2026</span> <span data-text="businessName">Rushikesh Motor Driving School</span>. All rights reserved.</span>' +
         '<span>Government fees are charged at actuals, as per the official receipt.</span>' +
       '</div>' +
       '<div class="stunity-credit" id="stunityCredit"><span class="sc-dot"></span><span>' + CREDIT_COMPANY + ' — by <b>' + CREDIT_AUTHOR + '</b></span></div>' +

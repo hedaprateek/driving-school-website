@@ -41,7 +41,7 @@
   });
 
   // Page titles are written with the default name; swap in the configured one.
-  var DEFAULT_NAME = "Raftaar Driving School";
+  var DEFAULT_NAME = "Rushikesh Motor Driving School";
   if (C.businessName && C.businessName !== DEFAULT_NAME) {
     document.title = document.title.replace(DEFAULT_NAME, C.businessName);
   }
