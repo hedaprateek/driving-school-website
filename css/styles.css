@@ -830,7 +830,11 @@ a.contact-card:hover { border-color: var(--amber); transform: translateY(-2px); 
 .brand-light .brand-sub { color: #9CA3AF; }
 .brand-light .brand-mark { background: rgba(255, 255, 255, .08); }
 .footer-blurb { margin-top: 16px; max-width: 30em; }
-.footer-owner { margin: 0; color: #D1D5DB; font-weight: 500; }
+.footer-owner { margin: 0 0 .4em; color: #D1D5DB; font-weight: 500; }
+.footer-areas { margin: 0; font-size: .88rem; max-width: 30em; }
+.mr-line { margin: -.3em 0 1em; font: 600 1.15rem/1.5 "Noto Sans Devanagari", "Mangal", "Nirmala UI", sans-serif; color: #E6E8EC; }
+.areas-card { margin-top: 14px; padding: 18px 20px; border-radius: var(--radius-sm); background: var(--amber-soft); border: 1px dashed #E7C766; font-size: .93rem; color: var(--ink-2); }
+.areas-card strong { color: var(--ink); }
 .owner-line { margin: -.2em 0 .9em; color: #E6E8EC; }
 .owner-line strong { color: var(--amber); }
 .site-footer h4 { color: #fff; font-size: 1rem; margin-bottom: 14px; }

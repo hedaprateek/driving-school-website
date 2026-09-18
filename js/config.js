@@ -18,8 +18,17 @@ window.SITE_CONFIG = {
   // WhatsApp number: country code + number, digits only (no "+" or spaces).
   whatsapp: "917720909706",
 
-  email: "hello@yourdomain.com",
-  address: "Office address, City, State – PIN",
+  // Leave empty to hide email everywhere on the site.
+  email: "",
+  // EDIT: add the street / landmark in front of the town.
+  address: "Ichalkaranji, Dist. Kolhapur, Maharashtra – 416115",
+  city: "Ichalkaranji",
+  district: "Kolhapur",
+  state: "Maharashtra",
+  pin: "416115",
+
+  // Nearby places you serve (shown in the footer and on the Contact page).
+  areasServed: ["Ichalkaranji", "Kabnur", "Shahapur", "Korochi", "Chandur", "Tardal", "Hatkanangale", "Jaysingpur", "Kolhapur"],
 
   // Working hours, as text (shown on the site)...
   hours: "Mon – Sat, 7:00 AM – 8:00 PM",
@@ -32,7 +41,7 @@ window.SITE_CONFIG = {
   batchStartDay: 1,
 
   // Google Maps search text for the map on the Contact page. Leave empty to hide the map.
-  mapQuery: "",
+  mapQuery: "Rushikesh Motor Driving School, Ichalkaranji, Maharashtra",
 
   // Where the booking and contact forms are sent.
   // Create a free form at https://formspree.io and paste its endpoint here.
@@ -77,9 +86,9 @@ window.SITE_CONFIG = {
      cat: "licence" | "vehicle" | "commercial"
      ------------------------------------------------------------------ */
   rtoServices: [
-    { id: "ll", cat: "licence", name: "Learner's licence", fee: 800, time: "Test slot in 2–7 days",
-      blurb: "Form filling, slot booking and test preparation for your LL.",
-      docs: ["Aadhaar card (age & address proof)", "Passport-size photograph", "Signature on white paper", "Medical certificate, Form 1A (only if age 40+)"] },
+    { id: "ll", cat: "licence", name: "Learner's licence", fee: 800, time: "Test from home, with Aadhaar",
+      blurb: "Maharashtra lets you take the LL test online from home — we apply, set it up and prepare you.",
+      docs: ["Aadhaar card (age & address proof)", "Mobile number linked to Aadhaar (for OTP)", "Passport-size photograph", "Signature on white paper", "Medical certificate, Form 1A (only if age 40+)"] },
     { id: "dl", cat: "licence", name: "Permanent driving licence", fee: 1200, time: "Test 30 days after LL",
       blurb: "Driving test slot, our dual-control car for the test, card by post.",
       docs: ["Learner's licence (at least 30 days old)", "Aadhaar card", "Passport-size photograph", "Medical certificate, Form 1A (only if age 40+)"] },
@@ -121,7 +130,7 @@ window.SITE_CONFIG = {
       blurb: "Re-registration after 15 years, with the fitness inspection.",
       docs: ["Original RC", "Form 25", "Valid insurance", "Valid PUC certificate", "Road tax receipt", "Vehicle for inspection"] },
     { id: "hsrp", cat: "vehicle", name: "HSRP number plate booking", fee: 300, time: "Fitted in 5–10 days",
-      blurb: "High-security number plates, booked and fitted.",
+      blurb: "Required in Maharashtra for vehicles registered before April 2019 — booked and fitted.",
       docs: ["RC copy", "Owner's mobile number", "Vehicle for fitting"] },
     { id: "insurance", cat: "vehicle", name: "Insurance & PUC renewal", fee: 200, time: "Same day",
       blurb: "Compare insurance quotes and renew PUC without the running around.",

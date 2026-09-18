@@ -33,6 +33,7 @@
     var kind = el.getAttribute("data-href");
     if (kind === "tel" && telNumber) el.href = "tel:" + telNumber;
     if (kind === "mailto" && C.email) el.href = "mailto:" + C.email;
+    if (kind === "mailto" && !C.email) (el.closest("li") || el).hidden = true;
     if (kind === "whatsapp" && waNumber) {
       el.href = waLink();
       el.target = "_blank";
@@ -52,6 +53,11 @@
       "https://maps.google.com/maps?q=" + encodeURIComponent(C.mapQuery) + "&z=15&output=embed";
     map.hidden = false;
   }
+
+  $$("[data-areas]").forEach(function (el) {
+    var a = C.areasServed || [];
+    if (a.length) el.textContent = a.length > 1 ? a.slice(0, -1).join(", ") + " and " + a[a.length - 1] : a[0];
+  });
 
   $$("[data-year]").forEach(function (el) { el.textContent = new Date().getFullYear(); });
 
@@ -76,7 +82,11 @@
     founder: C.owner ? { "@type": "Person", name: C.owner } : undefined,
     telephone: C.phone,
     email: C.email,
-    address: C.address,
+    address: C.city ? {
+      "@type": "PostalAddress", streetAddress: C.address, addressLocality: C.city,
+      addressRegion: C.state, postalCode: C.pin, addressCountry: "IN",
+    } : C.address,
+    areaServed: C.areasServed,
     openingHours: C.hours,
     url: location.origin + location.pathname.replace(/[^/]*$/, ""),
   });

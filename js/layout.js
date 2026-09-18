@@ -103,6 +103,7 @@
           '<a href="index.html" class="brand brand-light">' + BRAND + '</a>' +
           '<p class="footer-blurb">Learn to drive with patient, certified instructors — and get every RTO job done at a fair, fixed price, without the queues.</p>' +
           '<p class="footer-owner">Owner: <span data-text="owner">Rushikesh Nalawade</span></p>' +
+          '<p class="footer-areas">Serving <span data-areas>Ichalkaranji and nearby</span></p>' +
         '</div>' +
         '<div><h4>Services</h4><ul>' +
           FOOTER_LINKS.map(function (s) { return '<li><a href="' + s[0] + '">' + s[1] + '</a></li>'; }).join("") +
@@ -114,7 +115,7 @@
         '<div><h4>Visit us</h4><ul class="footer-contact">' +
           '<li><a data-href="tel" href="contact.html"><span data-text="phone">+91 77209 09706</span></a></li>' +
           '<li><a data-href="mailto" href="contact.html"><span data-text="email">hello@yourdomain.com</span></a></li>' +
-          '<li><span data-text="address">Office address, City, State – PIN</span></li>' +
+          '<li><span data-text="address">Ichalkaranji, Dist. Kolhapur, Maharashtra – 416115</span></li>' +
           '<li><span data-text="hours">Mon – Sat, 7:00 AM – 8:00 PM</span></li>' +
         '</ul></div>' +
       '</div>' +
