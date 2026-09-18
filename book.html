@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Book a Course or RTO Service — Raftaar Driving School</title>
+  <meta name="description" content="Book driving lessons or an RTO service in under a minute. Choose your course, time slot and start date — we confirm on WhatsApp.">
+  <meta name="theme-color" content="#121418">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>document.documentElement.className += ' js';</script>
+  <script src="js/config.js"></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body data-page="book">
+<script src="js/layout.js"></script>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="container">
+      <p class="crumbs"><a href="index.html">Home</a><span>/</span><span>Book now</span></p>
+      <p class="eyebrow on-dark"><span class="dot"></span>Book in under a minute</p>
+      <h1>Tell us what you need. We'll handle the rest.</h1>
+      <p class="lead">No payment now. We call or WhatsApp you to confirm your slot and your written price.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container book-grid">
+      <form class="form-card" id="book-form" data-lead-form data-form-name="Booking request">
+        <h2>Your booking</h2>
+        <p>Fields marked <span class="req">*</span> are required.</p>
+        <p class="prefill-note" id="prefill" hidden></p>
+
+        <div class="form-grid">
+          <fieldset class="field full" data-label="I need">
+            <legend>I need <span class="req">*</span></legend>
+            <div class="pills">
+              <label class="pill"><input type="radio" name="need" value="Driving course" data-need="course" checked><svg class="icon"><use href="#i-wheel"/></svg>Driving course</label>
+              <label class="pill"><input type="radio" name="need" value="RTO service" data-need="rto"><svg class="icon"><use href="#i-doc"/></svg>RTO service</label>
+              <label class="pill"><input type="radio" name="need" value="Course + RTO work" data-need="both"><svg class="icon"><use href="#i-gift"/></svg>Both</label>
+            </div>
+          </fieldset>
+
+          <div class="field" data-show-for="course both">
+            <label for="b-course-sel">Course</label>
+            <select id="b-course-sel" name="course" data-label="Course">
+              <option value="Not sure — please suggest">Not sure — please suggest</option>
+            </select>
+          </div>
+
+          <fieldset class="field" data-show-for="course both" data-label="Car">
+            <legend>Car</legend>
+            <div class="pills">
+              <label class="pill"><input type="radio" name="car" value="Manual" checked>Manual</label>
+              <label class="pill"><input type="radio" name="car" value="Automatic">Automatic</label>
+            </div>
+          </fieldset>
+
+          <div class="field full" data-show-for="rto both">
+            <label for="b-service-sel">RTO service</label>
+            <select id="b-service-sel" name="service" data-label="RTO service">
+              <option value="Not sure — please advise">Not sure — please advise</option>
+            </select>
+          </div>
+
+          <fieldset class="field full" data-show-for="course both" data-label="Preferred time">
+            <legend>Preferred time</legend>
+            <div class="pills">
+              <label class="pill"><input type="radio" name="slot" value="Early morning (7–9 AM)" checked>Early morning <small>7–9 AM</small></label>
+              <label class="pill"><input type="radio" name="slot" value="Morning (9 AM–12 PM)">Morning <small>9–12</small></label>
+              <label class="pill"><input type="radio" name="slot" value="Afternoon (12–4 PM)">Afternoon <small>12–4</small></label>
+              <label class="pill"><input type="radio" name="slot" value="Evening (4–8 PM)">Evening <small>4–8 PM</small></label>
+            </div>
+          </fieldset>
+
+          <div class="field" data-show-for="course both">
+            <label for="b-date">Start from</label>
+            <input type="date" id="b-date" name="start" data-label="Start from">
+          </div>
+
+          <div class="field">
+            <label for="b-area">Area / pick-up point <span class="opt-label">(optional)</span></label>
+            <input type="text" id="b-area" name="area" data-label="Area" placeholder="e.g. Shastri Nagar" autocomplete="address-level3">
+          </div>
+
+          <div class="field">
+            <label for="b-name">Your name <span class="req">*</span></label>
+            <input type="text" id="b-name" name="name" data-label="Name" required autocomplete="name">
+          </div>
+
+          <div class="field">
+            <label for="b-phone">Mobile number <span class="req">*</span></label>
+            <input type="tel" id="b-phone" name="phone" data-label="Mobile" required pattern="[0-9+\s\-]{10,15}" placeholder="10-digit mobile" autocomplete="tel" inputmode="tel">
+          </div>
+
+          <div class="field full">
+            <label for="b-extra">Anything else? <span class="opt-label">(optional)</span></label>
+            <textarea id="b-extra" name="notes" data-label="Notes" placeholder="e.g. I prefer a lady instructor, or I need this before 10 October"></textarea>
+          </div>
+        </div>
+
+        <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <div class="form-foot">
+          <p class="form-privacy">We use your number only to confirm this booking.</p>
+          <button type="submit" class="btn btn-amber btn-lg">Send booking request <svg class="icon"><use href="#i-arrow"/></svg></button>
+        </div>
+        <div class="form-status" role="status" hidden></div>
+      </form>
+
+      <aside class="book-side">
+        <div class="batch-card">
+          <p class="eyebrow on-dark"><span class="dot"></span>Next batch</p>
+          <div class="batch-date">
+            <div class="cal"><span data-batch="month">Sep</span><strong data-batch="day">21</strong></div>
+            <div><h3 data-batch="label">Mon, 21 Sep</h3><p data-batch="countdown">Starts soon</p></div>
+          </div>
+          <p>New batches start every week. Can't make it? We'll fit you into a slot that works.</p>
+        </div>
+
+        <div class="next-steps">
+          <h3>What happens next</h3>
+          <ol>
+            <li><strong>We call you back</strong> — usually within a few working hours.</li>
+            <li><strong>You get a written price</strong> on WhatsApp before anything starts.</li>
+            <li><strong>Pay when you begin</strong> — cash, UPI or card at our office.</li>
+          </ol>
+        </div>
+
+        <a class="contact-card" data-href="tel" href="contact.html">
+          <span class="ci"><svg class="icon"><use href="#i-phone"/></svg></span>
+          <span><strong>Rather talk?</strong><span data-text="phone">+91 00000 00000</span></span>
+        </a>
+      </aside>
+    </div>
+  </section>
+
+</main>
+
+<script>SiteLayout.renderFooter();</script>
+</body>
+</html>

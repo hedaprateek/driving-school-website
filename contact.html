@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact &amp; Visit — Raftaar Driving School</title>
+  <meta name="description" content="Call, WhatsApp or visit our office for driving lessons and RTO services. See our hours and whether we're open right now.">
+  <meta name="theme-color" content="#121418">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>document.documentElement.className += ' js';</script>
+  <script src="js/config.js"></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body data-page="contact">
+<script src="js/layout.js"></script>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="container">
+      <p class="crumbs"><a href="index.html">Home</a><span>/</span><span>Contact</span></p>
+      <p class="eyebrow on-dark"><span class="dot"></span>Contact &amp; visit</p>
+      <h1>Talk to a real person, not a queue</h1>
+      <p class="lead">Call, WhatsApp or drop in. Bring your documents and we'll tell you on the spot what's missing — free.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container contact-grid">
+      <div>
+        <div class="contact-cards">
+          <a class="contact-card" data-href="tel" href="#">
+            <span class="ci"><svg class="icon"><use href="#i-phone"/></svg></span>
+            <span><strong>Call us</strong><span data-text="phone">+91 00000 00000</span></span>
+          </a>
+          <a class="contact-card" data-href="whatsapp" href="#">
+            <span class="ci ci-wa"><svg class="icon"><use href="#i-whatsapp"/></svg></span>
+            <span><strong>WhatsApp</strong>Send documents &amp; questions</span>
+          </a>
+          <a class="contact-card" data-href="mailto" href="#">
+            <span class="ci"><svg class="icon"><use href="#i-mail"/></svg></span>
+            <span><strong>Email</strong><span data-text="email">hello@yourdomain.com</span></span>
+          </a>
+          <div class="contact-card">
+            <span class="ci"><svg class="icon"><use href="#i-clock"/></svg></span>
+            <span><strong>Hours</strong><span data-text="hours">Mon – Sat, 7:00 AM – 8:00 PM</span><br><span data-open-live></span></span>
+          </div>
+          <div class="contact-card wide">
+            <span class="ci"><svg class="icon"><use href="#i-pin"/></svg></span>
+            <span><strong>Office</strong><span data-text="address">Office address, City, State – PIN</span></span>
+          </div>
+        </div>
+        <div class="map" hidden><iframe title="Map to our office" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+      </div>
+
+      <form class="form-card" data-lead-form data-form-name="Website enquiry">
+        <h2>Send us a message</h2>
+        <p>We usually reply within a few working hours.</p>
+        <div class="form-grid">
+          <div class="field">
+            <label for="c-name">Your name <span class="req">*</span></label>
+            <input type="text" id="c-name" name="name" data-label="Name" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="c-phone">Mobile number <span class="req">*</span></label>
+            <input type="tel" id="c-phone" name="phone" data-label="Mobile" required pattern="[0-9+\s\-]{10,15}" autocomplete="tel" inputmode="tel">
+          </div>
+          <div class="field full">
+            <label for="c-msg">How can we help? <span class="req">*</span></label>
+            <textarea id="c-msg" name="message" data-label="Message" required placeholder="e.g. My licence expires next month — what do I need to renew it?"></textarea>
+          </div>
+        </div>
+        <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="form-foot">
+          <p class="form-privacy">We use your number only to reply to you.</p>
+          <button type="submit" class="btn btn-amber btn-lg">Send message <svg class="icon"><use href="#i-arrow"/></svg></button>
+        </div>
+        <div class="form-status" role="status" hidden></div>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<script>SiteLayout.renderFooter();</script>
+</body>
+</html>

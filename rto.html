@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RTO Services — Licence, RC Transfer, NOC &amp; More — Raftaar Driving School</title>
+  <meta name="description" content="Learner's licence, driving licence, renewal, duplicate licence, RC transfer, hypothecation removal, NOC, HSRP, permits and fitness — with a document checklist and a fixed service charge for each.">
+  <meta name="theme-color" content="#121418">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>document.documentElement.className += ' js';</script>
+  <script src="js/config.js"></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body data-page="rto">
+<script src="js/layout.js"></script>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="container">
+      <p class="crumbs"><a href="index.html">Home</a><span>/</span><span>RTO services</span></p>
+      <p class="eyebrow on-dark"><span class="dot"></span>RTO services</p>
+      <h1>Every RTO job, done right the first time</h1>
+      <p class="lead">Find your service, tick off the documents you already have, and see our fixed charge. We do the forms, the slots and the follow-up — you skip the queue.</p>
+      <div class="search-box">
+        <svg class="icon"><use href="#i-search"/></svg>
+        <input type="search" id="rto-search" placeholder="What do you need? e.g. renewal, RC transfer, NOC" aria-label="Search RTO services" autocomplete="off">
+      </div>
+      <div class="search-hints">
+        <button type="button" data-hint="licence">Licence</button>
+        <button type="button" data-hint="transfer">Selling a vehicle</button>
+        <button type="button" data-hint="loan">Loan closed</button>
+        <button type="button" data-hint="lost">Lost document</button>
+        <button type="button" data-hint="state">Moving state</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="container">
+      <div class="rto-toolbar">
+        <div class="seg" role="group" aria-label="Filter by category">
+          <button type="button" data-cat="all" aria-pressed="true">All</button>
+          <button type="button" data-cat="licence" aria-pressed="false">Licence</button>
+          <button type="button" data-cat="vehicle" aria-pressed="false">Vehicle &amp; RC</button>
+          <button type="button" data-cat="commercial" aria-pressed="false">Commercial</button>
+        </div>
+        <p class="rto-count" id="rto-count" aria-live="polite"></p>
+      </div>
+
+      <div class="rto-grid" id="rto-grid"></div>
+      <noscript><p>Please turn on JavaScript to browse our services, or call us and we'll tell you exactly what you need.</p></noscript>
+
+      <div class="empty" id="rto-empty" hidden>
+        <h3>Can't find it here?</h3>
+        <p>We handle more RTO work than fits on one page. Tell us what you need and we'll reply with the documents and our price.</p>
+        <a href="contact.html" data-href="whatsapp" class="btn btn-wa"><svg class="icon"><use href="#i-whatsapp"/></svg>Ask on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow"><span class="dot"></span>How it works</p>
+        <h2>Hassle-free, in four steps</h2>
+        <p>No standing at windows, no being sent back for a missing photocopy.</p>
+      </div>
+      <ol class="how">
+        <li class="reveal"><h3>Tell us what you need</h3><p>Walk in, call, or send the checklist from this page on WhatsApp.</p></li>
+        <li class="reveal"><h3>We check every document</h3><p>Before anything is filed — so nothing bounces back from the RTO.</p></li>
+        <li class="reveal"><h3>We file &amp; follow up</h3><p>Forms, fees, slots and the chasing. Updates reach you on WhatsApp.</p></li>
+        <li class="reveal"><h3>You get it done</h3><p>You come in only when the law needs you there. The rest is on us.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container cta-inner reveal">
+      <div>
+        <h2>Fixed charge. Official receipt. No running around.</h2>
+        <p>Our service charge is written on every card above. Government fees are paid at actuals and the receipt is yours.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="book.html" class="btn btn-amber btn-lg">Book an RTO service <svg class="icon"><use href="#i-arrow"/></svg></a>
+        <a href="contact.html" data-href="tel" class="btn btn-ghost-light btn-lg"><svg class="icon"><use href="#i-phone"/></svg><span data-text="phone">+91 00000 00000</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Documents checklist, filled in by main.js -->
+<dialog class="sheet" id="sheet" aria-labelledby="sheet-title">
+  <div class="sheet-head">
+    <p class="eyebrow on-dark"><span class="dot"></span><span id="sheet-cat">Licence</span></p>
+    <h2 id="sheet-title">Service</h2>
+    <p id="sheet-blurb"></p>
+    <div class="sheet-facts">
+      <div><strong id="sheet-fee">₹0</strong><span>Our charge + govt. fee at actuals</span></div>
+      <div><strong id="sheet-time">—</strong><span>Usual time</span></div>
+    </div>
+    <button type="button" class="sheet-close" aria-label="Close"><svg class="icon"><use href="#i-x"/></svg></button>
+  </div>
+  <div class="sheet-body">
+    <h3>Documents to bring <small id="sheet-done">0 of 0 ready</small></h3>
+    <div class="progress"><i id="sheet-progress"></i></div>
+    <ul class="doc-list" id="sheet-docs"></ul>
+    <p class="sheet-ready" id="sheet-ready" hidden>All set — you have everything we need. Book now and we'll take it from here.</p>
+    <div class="sheet-actions">
+      <a href="book.html" class="btn btn-amber" id="sheet-book">Book this service <svg class="icon"><use href="#i-arrow"/></svg></a>
+      <a href="contact.html" class="btn btn-wa" id="sheet-wa"><svg class="icon"><use href="#i-whatsapp"/></svg>Send us this list</a>
+    </div>
+    <p class="sheet-fine">Your ticks are saved on this device. Requirements can vary slightly by state — we confirm before filing. <button type="button" id="sheet-print" class="link-btn">Print this checklist</button></p>
+  </div>
+</dialog>
+
+<script>SiteLayout.renderFooter();</script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Driving Courses &amp; Prices — Raftaar Driving School</title>
+  <meta name="description" content="Car driving courses with fixed, written prices: Quick Start, Confident Driver, Road Master and Refresher. Add your learner's and permanent licence and save.">
+  <meta name="theme-color" content="#121418">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>document.documentElement.className += ' js';</script>
+  <script src="js/config.js"></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body data-page="courses">
+<script src="js/layout.js"></script>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="container">
+      <p class="crumbs"><a href="index.html">Home</a><span>/</span><span>Driving courses</span></p>
+      <p class="eyebrow on-dark"><span class="dot"></span>Courses &amp; prices</p>
+      <h1>Pick a course. See the full price. No surprises later.</h1>
+      <p class="lead">Every course runs in a dual-control car with a certified instructor. Add the licence bundle and we handle your learner's and permanent licence at the RTO too.</p>
+    </div>
+  </section>
+
+  <!-- PRICE CARDS (filled from js/config.js) -->
+  <section class="section">
+    <div class="container">
+      <div class="course-toolbar reveal">
+        <div class="seg" role="group" aria-label="Show prices for">
+          <button type="button" data-mode="train" aria-pressed="true">Training only</button>
+          <button type="button" data-mode="bundle" aria-pressed="false">Course + licence <span class="save-pill" id="save-pill"></span></button>
+        </div>
+      </div>
+      <div class="course-grid" id="course-grid"></div>
+      <noscript><p>Please turn on JavaScript to see our prices, or call us — we're happy to talk you through them.</p></noscript>
+    </div>
+  </section>
+
+  <!-- PLAN BUILDER -->
+  <section class="section section-alt" id="builder-section">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow"><span class="dot"></span>Build your plan</p>
+        <h2>Your exact price, in four taps</h2>
+        <p>Choose your course and extras — the total updates as you go. Book it, or send it to us on WhatsApp for a written confirmation.</p>
+      </div>
+
+      <div class="builder">
+        <form class="builder-form" id="builder" onsubmit="return false">
+          <div class="b-step">
+            <h3><span class="b-num">1</span>Course</h3>
+            <div class="opt-grid" id="b-courses"></div>
+          </div>
+
+          <div class="b-step">
+            <h3><span class="b-num">2</span>Car</h3>
+            <div class="opt-grid">
+              <label class="opt-card"><input type="radio" name="b-car" value="manual" checked><span class="opt-main"><span class="tick"></span><span><strong>Manual</strong><small>Most common, most flexible</small></span></span><span class="opt-price">Included</span></label>
+              <label class="opt-card"><input type="radio" name="b-car" value="automatic"><span class="opt-main"><span class="tick"></span><span><strong>Automatic</strong><small>No clutch — easier in traffic</small></span></span><span class="opt-price" id="b-auto-price"></span></label>
+            </div>
+          </div>
+
+          <div class="b-step">
+            <h3><span class="b-num">3</span>Licence</h3>
+            <label class="switch-card">
+              <span class="switch"><input type="checkbox" id="b-bundle" aria-describedby="bundle-desc"><span></span></span>
+              <span id="bundle-desc"><strong>Add learner's + permanent licence</strong>
+                <small>We fill the forms, book both tests and send our car for your driving test — <span data-bundle-price>₹1,500</span><span data-bundle-compare> instead of <s data-bundle-full>₹2,000</s></span>. Govt. fees extra, at actuals.</small></span>
+            </label>
+          </div>
+
+          <div class="b-step">
+            <h3><span class="b-num">4</span>Extras</h3>
+            <div class="opt-grid" id="b-addons"></div>
+          </div>
+        </form>
+
+        <aside class="summary" aria-live="polite">
+          <h3>Your plan</h3>
+          <ul class="sum-lines" id="sum-lines"></ul>
+          <div class="sum-total"><span>Total</span><strong id="sum-total">₹0</strong></div>
+          <p class="sum-note">Fixed price. Government licence fees, if any, are paid at actuals with the official receipt.</p>
+          <a href="book.html" class="btn btn-amber btn-block btn-lg" id="sum-book">Book this plan <svg class="icon"><use href="#i-arrow"/></svg></a>
+          <a href="contact.html" class="btn btn-wa btn-block" id="sum-wa"><svg class="icon"><use href="#i-whatsapp"/></svg>Send plan on WhatsApp</a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT'S INCLUDED -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow"><span class="dot"></span>In every course</p>
+        <h2>What you get, whichever course you choose</h2>
+      </div>
+      <div class="includes">
+        <div class="inc reveal"><span class="inc-icon"><svg class="icon"><use href="#i-shield"/></svg></span><h3>Dual-control cars</h3><p>Your instructor has their own brake and clutch, so you learn without fear.</p></div>
+        <div class="inc reveal"><span class="inc-icon"><svg class="icon"><use href="#i-award"/></svg></span><h3>Certified instructors</h3><p>Trained, licensed and patient — they've taught thousands of first-timers.</p></div>
+        <div class="inc reveal"><span class="inc-icon"><svg class="icon"><use href="#i-calendar"/></svg></span><h3>Slots that fit your day</h3><p>Early morning to evening, weekdays or weekends. Reschedule with a message.</p></div>
+        <div class="inc reveal"><span class="inc-icon"><svg class="icon"><use href="#i-route"/></svg></span><h3>Real roads, real test track</h3><p>City traffic, parking and the RTO test layout — so test day holds no surprises.</p></div>
+        <div class="inc reveal"><span class="inc-icon"><svg class="icon"><use href="#i-doc"/></svg></span><h3>Rules &amp; signs classroom</h3><p>Everything you need for the learner's test, plus our free online mock test.</p></div>
+        <div class="inc reveal"><span class="inc-icon"><svg class="icon"><use href="#i-users"/></svg></span><h3>Lady instructors</h3><p>Available on request, at no extra charge.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container cta-inner reveal">
+      <div>
+        <h2>Not sure which course?</h2>
+        <p>Tell us how much you've driven before. We'll recommend the shortest course that gets you test-ready — not the most expensive one.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="contact.html" data-href="whatsapp" class="btn btn-amber btn-lg"><svg class="icon"><use href="#i-whatsapp"/></svg>Ask on WhatsApp</a>
+        <a href="contact.html" data-href="tel" class="btn btn-ghost-light btn-lg"><svg class="icon"><use href="#i-phone"/></svg><span data-text="phone">+91 00000 00000</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script>SiteLayout.renderFooter();</script>
+</body>
+</html>

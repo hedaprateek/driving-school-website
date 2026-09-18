@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Free Learner's Licence Mock Test — Raftaar Driving School</title>
+  <meta name="description" content="Practise for your learner's licence test free: 15 random questions on road signs and traffic rules, with answers explained. Pass mark 9 out of 15.">
+  <meta name="theme-color" content="#121418">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>document.documentElement.className += ' js';</script>
+  <script src="js/config.js"></script>
+  <script src="js/test.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body data-page="test">
+<script src="js/layout.js"></script>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="container">
+      <p class="crumbs"><a href="index.html">Home</a><span>/</span><span>LL mock test</span></p>
+      <p class="eyebrow on-dark"><span class="dot"></span>Free practice</p>
+      <h1>Pass your learner's test on the first try</h1>
+      <p class="lead">Road signs and traffic rules, just like the real LL test. Every answer is explained, and each attempt picks a fresh set of questions.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container test-shell" id="test">
+      <div class="test-card">
+
+        <div id="t-start">
+          <h2>Ready when you are</h2>
+          <p>Take it as many times as you like. Nothing is recorded except your best score, on this device.</p>
+          <div class="rules">
+            <div><strong>15</strong><span>questions</span></div>
+            <div><strong>9</strong><span>to pass (60%)</span></div>
+            <div><strong>30s</strong><span>per question</span></div>
+          </div>
+          <label class="timed-toggle"><span class="switch"><input type="checkbox" id="t-timed" checked><span></span></span>Timed, like the real test</label>
+          <button type="button" class="btn btn-amber btn-lg" id="t-go">Start the test <svg class="icon"><use href="#i-arrow"/></svg></button>
+          <p class="sheet-fine" id="t-best" hidden></p>
+          <noscript><p>The mock test needs JavaScript turned on.</p></noscript>
+        </div>
+
+        <div id="t-question" hidden>
+          <div class="q-top">
+            <span class="q-count" id="t-count" aria-live="polite"></span>
+            <div class="timer" id="t-timer" aria-hidden="true">
+              <svg viewBox="0 0 46 46"><circle class="t-bg" cx="23" cy="23" r="18"/><circle class="t-fg" cx="23" cy="23" r="18"/></svg>
+              <span>30</span>
+            </div>
+          </div>
+          <div class="q-bar"><i id="t-bar"></i></div>
+          <div class="q-main" id="t-main">
+            <div class="q-sign" id="t-sign"></div>
+            <p class="q-text" id="t-q"></p>
+          </div>
+          <div class="opts" id="t-opts"></div>
+          <p class="explain" id="t-explain" aria-live="polite" hidden></p>
+          <div class="q-actions"><button type="button" class="btn btn-amber" id="t-next" hidden>Next question →</button></div>
+        </div>
+
+        <div id="t-result" class="result" hidden>
+          <div class="score-ring">
+            <svg viewBox="0 0 170 170"><circle class="s-bg" cx="85" cy="85" r="72"/><circle class="s-fg" id="r-ring" cx="85" cy="85" r="72"/></svg>
+            <div><strong id="r-score">0</strong><span id="r-total">out of 15</span></div>
+          </div>
+          <span class="verdict" id="r-verdict"></span>
+          <p id="r-msg"></p>
+          <div class="result-actions">
+            <button type="button" class="btn btn-amber" id="r-again">Try another set</button>
+            <a href="book.html?service=ll" class="btn btn-ghost-light">Book my LL test with you <svg class="icon"><use href="#i-arrow"/></svg></a>
+          </div>
+          <ul class="review" id="r-review"></ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow"><span class="dot"></span>Know your signs</p>
+        <h2>The signs that come up most</h2>
+        <p><strong>Red circles</strong> forbid, <strong>blue circles</strong> order, <strong>red triangles</strong> warn, and <strong>blue rectangles</strong> inform. Learn that, and half the test is done.</p>
+      </div>
+      <div class="sign-grid" id="sign-grid"></div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container cta-inner reveal">
+      <div>
+        <h2>Feeling ready? We'll book your LL test.</h2>
+        <p>We fill the form, book the earliest slot and tell you exactly what to bring — for a fixed, upfront charge.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="book.html?service=ll" class="btn btn-amber btn-lg">Book my LL <svg class="icon"><use href="#i-arrow"/></svg></a>
+        <a href="rto.html?service=ll" class="btn btn-ghost-light btn-lg">See documents needed</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script>SiteLayout.renderFooter();</script>
+</body>
+</html>
