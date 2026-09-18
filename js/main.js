@@ -73,6 +73,7 @@
     "@type": "DrivingSchool",
     name: C.businessName,
     description: "Driving lessons in dual-control cars and RTO services: learner's licence, driving licence, renewal, RC transfer, NOC, permits and more.",
+    founder: C.owner ? { "@type": "Person", name: C.owner } : undefined,
     telephone: C.phone,
     email: C.email,
     address: C.address,

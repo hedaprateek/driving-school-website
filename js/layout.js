@@ -75,7 +75,7 @@
     SPRITE +
     '<a class="skip-link" href="#main">Skip to content</a>' +
     '<div class="topbar"><div class="container topbar-inner">' +
-      '<a data-href="tel" href="contact.html">' + icon("phone") + '<span data-text="phone">+91 00000 00000</span></a>' +
+      '<a data-href="tel" href="contact.html">' + icon("phone") + '<span data-text="phone">+91 77209 09706</span></a>' +
       '<span class="open-status" data-open-status>' + icon("clock") + '<span data-text="hours">Mon – Sat, 7:00 AM – 8:00 PM</span></span>' +
       '<a class="topbar-cta" href="book.html"><span data-next-batch>New batches every week</span> ' + icon("arrow") + '</a>' +
     '</div></div>' +
@@ -102,6 +102,7 @@
         '<div>' +
           '<a href="index.html" class="brand brand-light">' + BRAND + '</a>' +
           '<p class="footer-blurb">Learn to drive with patient, certified instructors — and get every RTO job done at a fair, fixed price, without the queues.</p>' +
+          '<p class="footer-owner">Owner: <span data-text="owner">Rushikesh Nalawade</span></p>' +
         '</div>' +
         '<div><h4>Services</h4><ul>' +
           FOOTER_LINKS.map(function (s) { return '<li><a href="' + s[0] + '">' + s[1] + '</a></li>'; }).join("") +
@@ -111,7 +112,7 @@
           '<li><a href="book.html">Book now</a></li>' +
         '</ul></div>' +
         '<div><h4>Visit us</h4><ul class="footer-contact">' +
-          '<li><a data-href="tel" href="contact.html"><span data-text="phone">+91 00000 00000</span></a></li>' +
+          '<li><a data-href="tel" href="contact.html"><span data-text="phone">+91 77209 09706</span></a></li>' +
           '<li><a data-href="mailto" href="contact.html"><span data-text="email">hello@yourdomain.com</span></a></li>' +
           '<li><span data-text="address">Office address, City, State – PIN</span></li>' +
           '<li><span data-text="hours">Mon – Sat, 7:00 AM – 8:00 PM</span></li>' +

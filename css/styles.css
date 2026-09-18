@@ -830,6 +830,9 @@ a.contact-card:hover { border-color: var(--amber); transform: translateY(-2px); 
 .brand-light .brand-sub { color: #9CA3AF; }
 .brand-light .brand-mark { background: rgba(255, 255, 255, .08); }
 .footer-blurb { margin-top: 16px; max-width: 30em; }
+.footer-owner { margin: 0; color: #D1D5DB; font-weight: 500; }
+.owner-line { margin: -.2em 0 .9em; color: #E6E8EC; }
+.owner-line strong { color: var(--amber); }
 .site-footer h4 { color: #fff; font-size: 1rem; margin-bottom: 14px; }
 .site-footer ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 9px; }
 .site-footer a { color: #D1D5DB; text-decoration: none; }

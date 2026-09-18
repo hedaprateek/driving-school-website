@@ -10,12 +10,13 @@
 window.SITE_CONFIG = {
   businessName: "Rushikesh Motor Driving School",
   tagline: "Driving School & RTO Services",
+  owner: "Rushikesh Nalawade",
 
   // Shown on the site and used for "tap to call".
-  phone: "+91 00000 00000",
+  phone: "+91 77209 09706",
 
   // WhatsApp number: country code + number, digits only (no "+" or spaces).
-  whatsapp: "910000000000",
+  whatsapp: "917720909706",
 
   email: "hello@yourdomain.com",
   address: "Office address, City, State – PIN",
